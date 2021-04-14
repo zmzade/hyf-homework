@@ -140,7 +140,7 @@ address {
 @media screen and (max-width: 800px) {
     h1 {
         font-size: 25px;
-        margin: 1px;
+        margin-top: 25px;
         padding: 0px;
     }
 
@@ -153,7 +153,8 @@ address {
         flex-direction: column;
     }
     .header-container {
-        margin: 2px;
+        margin: 5px;
+        display: block;
         padding: 0px;
     }
     
