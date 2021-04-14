@@ -12,19 +12,23 @@ header {
     width: 100%;
     background-color: ghostwhite;
 }
+.header-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 120px;
+}
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     margin-bottom:0px ;
     margin-top: 40px;
-    margin-left: 120px;
 }
 header p {
     margin-top: 5px;
     color: darkgrey;
     margin-bottom: 10px;
-    margin-left: 120px;
 }
 .head-navbar {
     display: flex;
@@ -135,7 +139,7 @@ address {
 }
 @media screen and (max-width: 800px) {
     h1 {
-        font: 2em arial;
+        font-size: 25px;
     }
     ul {
         flex-direction: column;
@@ -145,6 +149,7 @@ address {
         padding: 2px;
         flex-direction: column;
     }
+
 
     .logo {
         width: fit-content;
