@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Step 2</title>
+        <link rel="stylesheet" href="style.css" />
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+
+        <!-- nav
+        =============================================================-->
+        <nav>
+            <div class="nav-container">
+                <img src="pinguin-logo.png" alt="a pinguin">
+                <div class="navigation-box">
+                    <a href="#" target="_blank">home</a> 
+                    <a href="#" target="_blank">about</a>
+                    <a href="#" target="_blank">our services</a>
+                    <a href="#" target="_blank">our office</a>
+                </div>
+            </div>
+        </nav><!-- end nav-->
+
+        <!-- content
+        ============================================================ -->
+        <section>
+        
+            <header>
+                <h1>Sign up to yourcustomtailer.com</h1>
+            </header>
+
+            <div>
+                <h2>Step 2/4 - how we can reach you?</h2>
+                <div class="progress-bar">
+                    <label for="file">Progress</label>
+                    <progress id="file" value="50" max="100">50%</progress>
+                </div>
+           </div>
+           
+            <p>We will probably need to stay in touch somehow. Let it know how we can reach you?</p>
+            <!-- form-->
+            <form action="#" method="GET">
+                <div class="customerinfo-subcontainer">
+                    <div class="info-tinycontainer1">
+                        <div class="col-left">
+                            <div><label for="email">Email<span class="required"> *</span></label></div>
+                            <div><label for="password">Password<span class="required"> *</span></label></div>
+                            <div><label for="reenter-pasword">Re-enter Password<span class="required"> *</span></label></div> 
+                        </div>
+                        <div class="col-right">
+                            <div><input type="email" id="email" name="user-email" required/></div>
+                            <div><input type="password" id="password" name="user-password" minlength="8" required/></div>
+                            <div><input type="password" id="reenter-pasword" name="user-reenter-password" minlength="8" required/></div>
+                        </div>
+                    </div>
+                    <div class="info-tinycontainer2">
+                        <div class="col-left">
+                            <div><label for="phone-number">Phone</label></div>
+                        </div>
+                        <div class="col-right">
+                            <div><input type="tel" id="phone-number" name="user-phonenumber" pattern="[+]?[0-9]"/></div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div>
+                    <p>I want to sign up for the newsletter</p>
+                </div>
+
+                <div class="newsletter-container checkbox"> 
+                        <div>
+                            <label for="weekly-news">Weekly news</label>
+                            <input type="radio" class="checkbox-size" id="weekly-news" name="news" value="weekly" checked />
+                        </div>
+                        <div>
+                            <label for="monthly-news">Monthly news</label>
+                            <input type="radio" class="checkbox-size" id="monthly-news" name="news" value="monthly" checked/>
+                        </div>
+                        <div>
+                            <label for="not-send-news">Don't send me news</label>
+                            <input type="radio" class="checkbox-size" id="not-send-news" name="news" value="noNews" checked/>
+                        </div>
+                </div>
+                <div class="next-step">
+                    <a href="index2.html"><input type="button" class="button" value="Next step" /></a>
+                </div>
+            </form>
+        </section>
+    
+

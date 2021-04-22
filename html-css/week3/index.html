@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <!-- Basic page needs
+        =========================================================== -->
+        <title>Step 1</title>
+        <meta charset="utf-8" />
+
+        <!-- mobile specific metas
+        =============================================================-->
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+
+        <!-- Css 
+        =============================================================-->
+        <link rel="stylesheet" href="style.css" />
+
+    </head>
+
+
+
+
+    <body>
+
+        <!-- nav
+        =============================================================-->
+        <nav>
+            <div class="nav-container">
+                <img src="pinguin-logo.png" alt="a pinguin">
+                <div class="navigation-box">
+                    <a href="#" target="_blank">home</a> 
+                    <a href="#" target="_blank">about</a>
+                    <a href="#" target="_blank">our services</a>
+                    <a href="#" target="_blank">our office</a>
+                </div>
+            </div>
+        </nav><!-- end nav-->
+        
+    
+
+        <!-- content
+        ============================================================ -->
+        
+        <section>
+            <header>
+                <h1>Sign up to yourcustomtailer.com</h1>
+            </header>
+            <div>
+                <p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+                <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details about your first...</p>
+            </div>
+        
+            <div>
+                <h2>Step 1/4 - tell us who you are?</h2>
+                <div>
+                    <label for="file">Progress</label>
+                    <div class="progress-bar"><progress id="file" value="25" max="100">25%</progress></div>
+                </div>
+            </div>
+            
+            <!-- form-->
+            <form action="#" method="GET">
+                <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:</p>
+                <div class="customerinfo-bigcontainer">
+                    <div class="customerinfo-subcontainer">
+
+                        <div class="info-tinycontainer1">
+                            <div class="col-left">
+                                <div><label for="fname">First name <span class="required">*</span></label></div>
+                                <div><label for="country">Country <span class="required">*</span></label></div>
+                                <div><label for="staddress">Street address <span class="required">*</span></label></div> 
+                            </div>
+
+                            <div class="col-right">
+                                <div><input type="text" id="fname" name="user-firstName" required/></div>
+                                <div><select id="country" name="countryList" form="countryName" required >
+                                    <option value=""></option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Iran">Iran</option>
+                                </select></div>
+                                <div><input type="text" id="staddress" name="user-street-address" required/></div>
+                            </div>  
+                        </div>
+
+                        <div class="info-tinycontainer2">
+                            <div class="col-left">
+                                <div><label for="lname">Last name <span class="required">*</span></label></div>
+                                <div><label for="pcode">Post code <span class="required">*</span></label></div>
+                            </div>
+
+                            <div class="col-right">
+                                <div><input type="text" id="lname" name="user-lastName" required/></div>
+                                <div><input type="number" id="pcode" name="user-postcode" pattern="[+]?[0-9]" required/></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                </div>
+                <div class="textarea-container">
+                    <label for="profile-description">Profile description
+                    <p class="description-label"><em>Please provide a short description of yourself to be displayed on our social community pages.</em></p>
+                    </label>
+                    <textarea id="profile-description" name="user-profile-description" ></textarea>
+                </div>
+                
+                <p>Use the same address for billing and shipping? Uncheck below to fill out a seperate shipping address.</p>
+
+                <div>
+                    <div class="checkbox">
+                        <label for="shipping-address">Shipping address</label>
+                        <input type="checkbox" class="checkbox-size" id="shipping-address" name="shipping" value="address" checked>
+                    </div>
+                    <div class="next-step">
+                        <a href="index1.html">
+                            <input type="button" class="button" value="Next step"></a>
+                    </div>
+                </div>
+                
+            </form> <!-- form end-->
+
+        </section><!-- content end-->
+    
+    </body>
+    
+</html>
