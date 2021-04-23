@@ -1,1 +1,2 @@
 apples have different colors.
+red, green, yellow, ... .
