@@ -1,0 +1,3 @@
+I had to make a branch inside of master branch today.
+and then push to github.
+and then pull request and do merging.
