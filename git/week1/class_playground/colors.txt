@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-blue green
-red
+red blue
+green
 yellow
 
