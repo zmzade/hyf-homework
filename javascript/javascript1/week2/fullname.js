@@ -5,7 +5,7 @@ function getFullname (firstname, surname) {
 console.log(getFullname("Benjamin", "Hughes"));
 
 //second part
-const fullname1 = getFullname("Benjamin", "Hughes");
-const fullname2 = getFullname("Benjamin", "Hughes");
-console.log(fullname1);
-console.log(fullname2);
+const fullname1 = getFullname("Benjamin", "Hughes")
+const fullname2 = getFullname("Benjamin", "Hughes")
+console.log(fullname1)
+console.log(fullname2)
