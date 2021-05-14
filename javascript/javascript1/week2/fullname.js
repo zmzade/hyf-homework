@@ -1,6 +1,6 @@
 // first part
 function getFullname (firstname, surname) {
- return (`"${firstname} ${surname}"`)
+ return `"${firstname} ${surname}"`
 }
 console.log(getFullname("Benjamin", "Hughes"));
 
