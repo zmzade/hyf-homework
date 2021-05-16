@@ -28,15 +28,19 @@ console.log(boughtCandyPrices);
 
 // second part
 let amountToSpend = Math.floor(Math.random() * 100);
-console.log(`The amount I can spend: ${amountToSpend}`);
+    console.log(`The amount I can spend: ${amountToSpend}`);
+
+
 function canBuyMoreCandy (boughtCandy){
     let sum  = 0;
     for (let i = 0; i < boughtCandy.length; i++){
-      sum += boughtCandy[i];    
+        sum += boughtCandy[i];    
     }
-console.log(`My candy basket total price: ${sum}`);
-    return (sum <= amountToSpend)
+        console.log(`My candy basket total price: ${sum}`);
+        return (sum <= amountToSpend)
 }
-console.log(`Can I buy more candy? ${canBuyMoreCandy (boughtCandyPrices)}`)
+
+    console.log(`Can I buy more candy? ${canBuyMoreCandy (boughtCandyPrices)}`)
 
 
+ 
