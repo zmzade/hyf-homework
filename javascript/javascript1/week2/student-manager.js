@@ -2,25 +2,24 @@
 const class07Students = [];
 function addStudentToClass(studentName) {
     if (!studentName) {
-        console.log(`"Please write down your name"`)
+        console.log(`Please write down your name`)
         return
-    }else {
+    }
+
     if (class07Students.length < 6 || studentName === 'Queen') {
+        
         if (class07Students.includes(studentName)) {
             console.log(`Student ${studentName} is already in the class`)
-        }
-        else {
+        }else {
             return class07Students.push(studentName)
         } 
     }else {
         console.log('Cannot add more students to class 07') 
-    }
-}
-   
+        }
 }
 
 function getNumberOfStudents() {
-  return class07Students.length
+    return class07Students.length
 }
 
 
