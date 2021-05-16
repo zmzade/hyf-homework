@@ -1,20 +1,21 @@
 
 
 function getFullname (firstname, surname, useFormalName, gender) {
+   
     if (!firstname || !surname)  {
-        return `"Please fill up firstname and surname."`
+        return `Please fill up firstname and surname.`
     }
-    else {
+
     if (useFormalName && gender === 'male') {
-        return `"Lord ${firstname} ${surname}"`
+        return `Lord ${firstname} ${surname}`
     }
     else if (useFormalName && gender === 'female') {
-        return `"Lady ${firstname} ${surname}"`
+        return `Lady ${firstname} ${surname}`
     } 
     else {
-        return `"${firstname} ${surname}"`
+        return `${firstname} ${surname}`
     }
-    } 
+    
 }
    
    console.log(getFullname("Benjamin", "Hughes", true, 'male'));
