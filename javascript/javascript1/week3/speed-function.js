@@ -5,8 +5,8 @@ const travelInformation = {
   
 function howlongTakes (travelInformation){ 
     let hours = travelInformation.destinationDistance / travelInformation.speed
-    let minutes = travelInformation.destinationDistance % travelInformation.speed
-    return `${Math.floor (hours)} hours and ${minutes} minutes`
+    let minutes = (hours - Math.floor(hours)) * 60
+    return `${Math.floor (hours)} hours and ${minutes.toFixed(0)} minutes`
 }
 
 const travelTime = howlongTakes(travelInformation);
