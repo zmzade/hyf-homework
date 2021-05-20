@@ -6,16 +6,15 @@ function addStudentToClass(studentName) {
         return
     }
 
-    if (class07Students.length < 6 || studentName === 'Queen') {
-        
-        if (class07Students.includes(studentName)) {
-            console.log(`Student ${studentName} is already in the class`)
-        }else {
-            return class07Students.push(studentName)
-        } 
-    }else {
+    if (class07Students.length >= 6 && studentName !== 'Queen') {
         console.log('Cannot add more students to class 07') 
-        }
+        return
+    }    
+    if (class07Students.includes(studentName)) {
+            console.log(`Student ${studentName} is already in the class`)
+            return
+    }
+    class07Students.push(studentName)
 }
 
 function getNumberOfStudents() {
