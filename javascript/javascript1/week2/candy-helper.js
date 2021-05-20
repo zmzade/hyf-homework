@@ -36,8 +36,8 @@ function canBuyMoreCandy (boughtCandy){
     for (let i = 0; i < boughtCandy.length; i++){
         sum += boughtCandy[i];    
     }
-        console.log(`My candy basket total price: ${sum}`);
-        return (sum <= amountToSpend)
+    console.log(`My candy basket total price: ${sum}`);
+    return (sum <= amountToSpend)
 }
 
     console.log(`Can I buy more candy? ${canBuyMoreCandy (boughtCandyPrices)}`)
