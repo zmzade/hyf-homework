@@ -1,12 +1,12 @@
 
 function sayWhatToWear (temperature){
- if(temperature <= 0){
-     return 'coats and jackets'
- } else if (temperature < 8){
+    if(temperature <= 0){
+    return 'coats and jackets'
+    } else if (temperature < 8){
      return 'sweaters and pullovers'
- } else {
+    } else {
     return 'shorts and t-shirts'
- }
+    }
 }
 const clothesToWear = sayWhatToWear(18);
 console.log(clothesToWear); 

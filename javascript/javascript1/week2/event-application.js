@@ -3,7 +3,7 @@ const weekday = ['Sunday', 'Monday', 'Tuseday', 'Wendsday', 'Thursday','Friday',
 function getEventWeekday (daysUntilEvent) {
     let today = new Date();
     let eventDate = (today.getDay() + daysUntilEventgit ) % 7;
-return weekday[eventDate] 
+    return weekday[eventDate] 
 }
 console.log(getEventWeekday(9));
 console.log(getEventWeekday(5));
