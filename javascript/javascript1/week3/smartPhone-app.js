@@ -62,28 +62,33 @@ function calculateMostUsedActivity(activities){
     let check = [], uniqueActivity = [];
 
     for(let i = 0; i < activities.length; i++){
-        
+        const { activity} = activities[i];//object destructuring
+        if(!uniqueActivity.includes(activity)) {
+        uniqueActivity.push(activity)
+        }
+        /*
         if( check[activities[i].activity]){
             continue;}
                 check[activities[i].activity] = true;
                     uniqueActivity.push(activities[i].activity);
+        */           
     }
     for(let j =0; j<uniqueActivity.length; j++){
-        let sumact = 0;
+        let totalDuration = 0;
             for(let k=0; k<activities.length; k++){
                 if(activities[k].activity === uniqueActivity[j]){
-                    sumact+=activities[k].duration
+                    totalDuration+=activities[k].duration
                 }
             }
-        let object2 = {actName:uniqueActivity[j], totalDuration: sumact}
-            totalTimeActivity.push(object2); 
+        let activityWithDuration = {name:uniqueActivity[j], totalDuration}
+            totalTimeActivity.push(activityWithDuration); 
     }
     console.log(totalTimeActivity)
-    let maxDuration = 0, maxAcitivty=[];
+    let maxDuration = 0, maxAcitivty='';
     for (let i = 0; i < totalTimeActivity.length; i++){
             if (totalTimeActivity[i].totalDuration > maxDuration){
                 maxDuration = totalTimeActivity[i].totalDuration;
-                maxAcitivty = totalTimeActivity[i].actName
+                maxAcitivty = totalTimeActivity[i].name
         }
     }
     console.log(`most activity is on: ${maxAcitivty} with ${maxDuration} min.`)
