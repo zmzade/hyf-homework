@@ -59,12 +59,12 @@ showStatus(activities, 200); // will log out this "You have added 3 activities. 
 let totalTimeActivity= [] 
 
 function calculateMostUsedActivity(activities){
-    let check = [], uniqueActivity = [];
+    let check = [], uniqueActivities = [];
 
     for(let i = 0; i < activities.length; i++){
         const { activity} = activities[i];//object destructuring
-        if(!uniqueActivity.includes(activity)) {
-        uniqueActivity.push(activity)
+        if(!uniqueActivities.includes(activity)) {
+        uniqueActivities.push(activity)
         }
         /*
         if( check[activities[i].activity]){
@@ -73,14 +73,14 @@ function calculateMostUsedActivity(activities){
                     uniqueActivity.push(activities[i].activity);
         */           
     }
-    for(let j =0; j<uniqueActivity.length; j++){
+    for(let j =0; j<uniqueActivities.length; j++){
         let totalDuration = 0;
             for(let k=0; k<activities.length; k++){
-                if(activities[k].activity === uniqueActivity[j]){
+                if(activities[k].activity === uniqueActivities[j]){
                     totalDuration+=activities[k].duration
                 }
             }
-        let activityWithDuration = {name:uniqueActivity[j], totalDuration}
+        let activityWithDuration = {name:uniqueActivities[j], totalDuration}
             totalTimeActivity.push(activityWithDuration); 
     }
     console.log(totalTimeActivity)
