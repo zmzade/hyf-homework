@@ -13,6 +13,7 @@ function renderProducts(products) {
     li.innerHTML = `<h2>${products[i].name}</h2><span>price: ${products[i].price}</span><br><span>Rating: ${products[i].rating}</span>`;
     ul.appendChild(li);
   }
+  return ul;
 }
 
 renderProducts(products); // This should create the ul and the li's with the individual products details
