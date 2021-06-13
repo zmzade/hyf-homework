@@ -95,4 +95,4 @@ const filter3 = {
   hasGarden: true,
 };
 
-const cheapFarmListings = filterListings(listings, filter3);
+//const cheapFarmListings = filterListings(listings, filter3);
