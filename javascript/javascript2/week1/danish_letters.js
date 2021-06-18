@@ -1,20 +1,13 @@
 const danishLetters = ["å", "æ", "ø"];
-
+let danishLetterSet = new Set(danishLetters);
 function getDanishLetters(danishString) {
   let letters = danishString.split("");
+  const lettersArr = letters.filter((letter) => danishLetterSet.has(letter));
 
-  let resultArray = [];
-  for (let j = 0; j < 3; j++) {
-    for (let i = 0; i < letters.length; i++) {
-      if (letters[i] === danishLetters[j]) {
-        resultArray.push(letters[i]);
-      }
-    }
-  }
-  function freqLetter(resultArray) {
-    let count = { total: resultArray.length };
-    for (i = 0; i < resultArray.length; i++) {
-      let character = resultArray[i].charAt(0);
+  function freqLetter(lettersArr) {
+    let count = { total: lettersArr.length };
+    for (i = 0; i < lettersArr.length; i++) {
+      let character = lettersArr[i].charAt(0);
 
       if (count[character]) {
         count[character]++;
@@ -24,7 +17,7 @@ function getDanishLetters(danishString) {
     }
     return count;
   }
-  console.log(freqLetter(resultArray));
+  console.log(freqLetter(lettersArr));
 }
 
 const danishString = "Jeg har en blå bil";
