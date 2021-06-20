@@ -1,0 +1,13 @@
+{
+  "name": "ABBA",
+  "origin": ["stokholm", "Sweden"],
+  "genres": ["pop", "Pop rock", "disco"],
+  "years active": ["1972 -1983", "2018-present"],
+  "website": "abbasite.com",
+  "members": [
+    { "name": "Agnetha", "lastName": "Faltskog" },
+    { "name": "Bjorn", "lastName": "Ulvaeus" },
+    { "name": "Beny", "lastName": "Andersson" },
+    { "name": "Anny-frid", "lastName": "Lyngstad" }
+  ]
+}
