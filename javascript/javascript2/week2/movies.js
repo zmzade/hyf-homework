@@ -4,7 +4,7 @@ const shortTitleMovies = movies.filter((x) => x.title.length < 3);
 const longTitleMovies = movies.filter((x) => x.title.length > 50);
 //console.log(longTitleMovies);
 
-const moviesIn80s = movies.filter((x) => (x.year >= 1980) & (x.year <= 1989));
+const moviesIn80s = movies.filter((x) => x.year >= 1980 && x.year <= 1989);
 //console.log(moviesIn80s.length);
 
 const moviesWithTag = movies.map((x) => {
