@@ -1,6 +1,7 @@
 const body = document.querySelector("body");
 const input = document.getElementById("input-city");
 const button = document.getElementById("button");
+
 button.addEventListener("click", getCityWeatherInfo);
 const apiKey = "aa5a826cc684a7127fa32b9ff1a5cf8e";
 
@@ -27,7 +28,7 @@ function getCityWeatherInfo() {
 //all callbacks,render weather info
 function renderWeatherInfo(data) {
   renderCityName(data.name);
-  renderCityTempreture(Math.floor(data.main.temp - 273));
+  renderCityTempreture(Math.round(data.main.feels_like - 273.15));
   renderWeatherType(data.weather[0].icon);
   renderWindSpeed(data.wind.speed);
   renderHowCloudy(data.clouds.all, data.weather[0].description);
@@ -44,12 +45,12 @@ function renderCityName(nameOfCity) {
 
 const fH6 = document.createElement("h6");
 function renderCityTempreture(tempreture) {
-  fH6.innerHTML = `tempreture: ${tempreture} &#176 c`;
+  fH6.innerHTML = `tempreture feels like: ${tempreture} &deg c`;
   h2.appendChild(fH6);
 }
 const image = document.createElement("img");
 function renderWeatherType(icon) {
-  image.src = "http://openweathermap.org/img/w/" + icon + ".png";
+  image.src = ` http://openweathermap.org/img/wn/${icon}@2x.png`;
   body.appendChild(image);
 }
 const sH6 = document.createElement("h6");
@@ -59,7 +60,7 @@ function renderWindSpeed(windSpeed) {
 }
 const p = document.createElement("p");
 function renderHowCloudy(cloudStatus, description) {
-  p.innerHTML = `Cloud pct.: ${cloudStatus} % <br> ${description}`;
+  p.innerHTML = `Cloudiness: ${cloudStatus} % <br> ${description}`;
   sH6.appendChild(p);
 }
 const p2 = document.createElement("p");
@@ -88,7 +89,7 @@ function showPosition(position) {
   let userLongitude = position.coords.longitude;
 
   const header = document.createElement("h6");
-  header.innerHTML = "Current position geoinfos:";
+  header.innerHTML = "Current position:";
   body.appendChild(header);
   positionP.innerHTML = `Latitude: ${userLatitude.toFixed(2)}<br>
   Longitude:${userLongitude.toFixed(2)}`;
@@ -103,21 +104,23 @@ function renderLocationWheather(lat, lon) {
     .then((response) => response.json())
     .then((result) => renderWeatherInfo(result));
 }
+
 //When a user has gotten a location through either the input element or
 //the geo location api, save that location using localstorage.
 
+//on page loading, should render functions by localstorage values.(but not working)
 document.addEventListener("DOMContentLoaded", useLocalStorage);
 function useLocalStorage() {
-  localStorage.setItem("latitude", position.coords.latitude);
-  localStorage.setItem("longitude", position.coords.longitude);
-  localStorage.setItem("cityName", input.value);
+  /* Didnot know how to get input.value for  "cityName", so put just the name"Rome".
+  Beside donot know how either input element or current location work*/
+  localStorage.setItem("cityName", "Rome");
+  let storageCity = localStorage.getItem("cityName");
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${storageCity}&appid=${apiKey}`
+  )
+    .then((res) => res.json())
+    .then((data) => renderWeatherInfo(data));
 
-  let storageCity = JSON.parse(localStorage.getItem("cityName"));
-  console.log(storageCity);
-  let storageLat = JSON.parse(localStorage.getItem("latitude"));
-  let storageLon = JSON.parse(localStorage.getItem("longitude"));
-
-  renderLocationWheather(storageLat, storageLon);
-  getCityWeatherInfo(storageCity);
-  //location.reload;
+  //navigator.geolocation.getCurrentPosition(showPosition);
+  location.reload;
 }
