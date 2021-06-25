@@ -3,16 +3,11 @@ const button = document.getElementById("button");
 const gifDiv = document.getElementById("gifDiv");
 const input = document.getElementById("input-limit");
 
-input.addEventListener("input", function (event) {
-  let userLimit = event.target.value;
-  renderGifs();
-});
-
 button.addEventListener("click", renderGifs);
 
 function renderGifs() {
   let userWord = document.getElementById("input-text").value;
-  userLimit = input.value;
+  let userLimit = input.value; //It doesnot work when user determine limit after userword.
   console.log(userLimit);
 
   if (!userWord) {
