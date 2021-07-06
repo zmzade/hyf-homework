@@ -19,14 +19,14 @@ getPromises();
 
 const header = document.createElement("h2");
 document.body.appendChild(header);
-header.innerHTML = "Repo's Info";
+header.innerHTML = "Github repo's Info";
 
 function renderRepos(items) {
   const repoDiv = document.createElement("div");
   document.body.appendChild(repoDiv);
   const owner = document.createElement("h5");
   repoDiv.appendChild(owner);
-  owner.innerHTML = `Repo owner: ${items[0].owner.login}`;
+  owner.innerHTML = `${items[0].owner.login}'s repositories`;
   owner.style.fontFamily = "Arial";
   const ul = document.createElement("ul");
   repoDiv.appendChild(ul);
