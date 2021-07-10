@@ -1,0 +1,11 @@
+button {
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+input {
+  height: 15px;
+}
