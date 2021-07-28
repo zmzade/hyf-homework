@@ -1,15 +1,18 @@
-const promise1 = moveElement(document.getElementById("red-button"), {
-  x: 20,
-  y: 300,
-});
-const promise2 = moveElement(document.getElementById("blue-button"), {
-  x: 400,
-  y: 300,
-});
-const promise3 = moveElement(document.getElementById("green-button"), {
-  x: 400,
-  y: 20,
-});
+const promise1 = () =>
+  moveElement(document.getElementById("red-button"), {
+    x: 20,
+    y: 300,
+  });
+const promise2 = () =>
+  moveElement(document.getElementById("blue-button"), {
+    x: 400,
+    y: 300,
+  });
+const promise3 = () =>
+  moveElement(document.getElementById("green-button"), {
+    x: 400,
+    y: 20,
+  });
 
 async function translateOneByOne() {
   await moveElement(document.getElementById("red-button"), {
@@ -31,7 +34,7 @@ async function translateOneByOne() {
 translateOneByOne();
 
 function translateAllAtOnce() {
-  Promise.all([promise1, promise2, promise3]).then(() =>
+  Promise.all([promise1(), promise2(), promise3()]).then(() =>
     console.log("all circles moved")
   );
 }
