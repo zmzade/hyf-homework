@@ -22,10 +22,16 @@ function renderGifs() {
   )
     .then((res) => res.json())
     .then((result) => {
+      clearGifData();
       const gifs = result.data.map((entry) => {
         const image = document.createElement("img");
         image.setAttribute("src", entry.images.downsized.url);
         gifDiv.appendChild(image);
       });
     });
+}
+function clearGifData() {
+  document.querySelectorAll("img").forEach((element) => {
+    element.remove();
+  });
 }
