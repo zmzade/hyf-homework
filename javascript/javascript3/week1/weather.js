@@ -21,6 +21,7 @@ function getCityWeatherInfo() {
       if (data.cod === "404") {
         alert("It is not a city name");
       }
+      localStorage.setItem("cityName", cityName);
       renderWeatherInfo(data);
     });
 }
@@ -43,25 +44,25 @@ function renderCityName(nameOfCity) {
   body.appendChild(h2);
 }
 
-const fH6 = document.createElement("h6");
+const tempretureHeader = document.createElement("h6");
 function renderCityTempreture(tempreture) {
-  fH6.innerHTML = `tempreture feels like: ${tempreture} &deg c`;
-  h2.appendChild(fH6);
+  tempretureHeader.innerHTML = `tempreture feels like: ${tempreture} &deg c`;
+  h2.appendChild(tempretureHeader);
 }
 const image = document.createElement("img");
 function renderWeatherType(icon) {
   image.src = ` http://openweathermap.org/img/wn/${icon}@2x.png`;
   body.appendChild(image);
 }
-const sH6 = document.createElement("h6");
+const cloudiness = document.createElement("h6");
 function renderWindSpeed(windSpeed) {
-  sH6.innerHTML = `wind speed: ${windSpeed} m/s`;
-  fH6.appendChild(sH6);
+  cloudiness.innerHTML = `wind speed: ${windSpeed} m/s`;
+  tempretureHeader.appendChild(cloudiness);
 }
 const p = document.createElement("p");
 function renderHowCloudy(cloudStatus, description) {
   p.innerHTML = `Cloudiness: ${cloudStatus} % <br> ${description}`;
-  sH6.appendChild(p);
+  cloudiness.appendChild(p);
 }
 const p2 = document.createElement("p");
 function renderSunrise(sunrise) {
@@ -108,19 +109,13 @@ function renderLocationWheather(lat, lon) {
 //When a user has gotten a location through either the input element or
 //the geo location api, save that location using localstorage.
 
-//on page loading, should render functions by localstorage values.(but not working)
 document.addEventListener("DOMContentLoaded", useLocalStorage);
 function useLocalStorage() {
-  /* Didnot know how to get input.value for  "cityName", so put just the name"Rome".
-  Beside donot know how either input element or current location work*/
-  localStorage.setItem("cityName", "Rome");
   let storageCity = localStorage.getItem("cityName");
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${storageCity}&appid=${apiKey}`
   )
     .then((res) => res.json())
     .then((data) => renderWeatherInfo(data));
-
-  //navigator.geolocation.getCurrentPosition(showPosition);
   location.reload;
 }

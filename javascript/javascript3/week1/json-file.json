@@ -1,6 +1,9 @@
 {
   "name": "ABBA",
-  "origin": ["stokholm", "Sweden"],
+  "origin": {
+    "city": "stokholm",
+    "country": "Sweden"
+  },
   "genres": ["pop", "Pop rock", "disco"],
   "years active": ["1972 -1983", "2018-present"],
   "website": "abbasite.com",
