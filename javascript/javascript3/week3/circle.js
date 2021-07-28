@@ -39,13 +39,10 @@ function createRandCircle(e) {
   // let rand_x = Math.floor(Math.random() * window.innerWidth);
   //let rand_y = Math.floor(Math.random() * window.innerHeight);
 
-  let mouseX = e.x;
-  let mouseY = e.y;
+  const mouseX = e.x;
+  const mouseY = e.y;
 
-  let mouse_x = mouseX + Math.floor(Math.random() * 20);
-  let mouse_y = mouseY + Math.floor(Math.random() * 20);
-
-  let rand_r = Math.floor(Math.random() * 50);
+  const rand_r = Math.floor(Math.random() * 50);
 
   let myCircle = new Circle(
     mouseX,
