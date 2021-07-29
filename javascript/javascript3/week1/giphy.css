@@ -1,0 +1,20 @@
+#gifDiv {
+  margin-top: 10px;
+}
+#button {
+  background-color: mediumseagreen;
+  margin: 20px;
+  padding: 20px;
+}
+h1 {
+  font-family: cursive;
+  font-size: xx-large;
+}
+input {
+  padding: 20px;
+}
+img {
+  margin: 20pxs;
+  padding: 20px;
+  width: 200px;
+}
