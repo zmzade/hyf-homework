@@ -34,31 +34,31 @@ WHERE id = 37;
 --Student: with the columns: id, name, email, phone, class_id (foreign key)
 CREATE database School;
 use School;
-create table `Class`(
-`id` INT (10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-`name` VARCHAR (255) NOT NULL,
-`begins` DATETIME,
-`ends` DATETIME 
+CREATE TABLE `class`(
+    `id` INT (10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR (255) NOT NULL,
+    `begins` DATETIME,
+    `ends` DATETIME 
 );
-CREATE Table `student`(
-`id` INT (10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-`name` VARCHAR (255) NOT NULL,
-`email` VARCHAR (255) NOT NULL,
-`phone` VARCHAR(255) NULL,
-`class_id` INT (10) UNSIGNED NOT NULL,
-FOREIGN KEY (`Class_id`) REFERENCES Class(`id`) ON delete SET NULL ON update CASCADE
+CREATE TABLE `student`(
+    `id` INT (10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR (255) NOT NULL,
+    `email` VARCHAR (255) NOT NULL,
+    `phone` VARCHAR(255) NULL,
+    `class_id` INT (10) UNSIGNED NOT NULL,
+    FOREIGN KEY (`class_id`) REFERENCES class(`id`) ON delete SET NULL ON update CASCADE
 );
 --Create an index on the name column of the student table.
 --add a new column to the class table named status which can only have 
 --the following values: not-started, ongoing, finished (hint: enumerations).
-CREATE index idx_name
+CREATE INDEX idx_name
 on student (name);
 SHOW INDEX FROM student;
-ALTER Table Class
+ALTER TABLE Class
 ADD status enum('not-started', 'ongoing', 'finished') not null;
 ----------------------------------------------------------------------
 -------------------------Part 3: More queries
-use hyf_lesson2;
+USE hyf_lesson2;
 
 
 --Get all the tasks assigned to users whose email ends in @spotify.com
@@ -104,16 +104,16 @@ GROUP BY month(task.created);
 use registration;
 SET NAMES utf8mb4;
 -- database has 4 tables: student, department, course and enrollment.
-CREATE Table `student`(
+CREATE TABLE `student`(
     student_id INT(10) UNSIGNED PRIMARY KEY,
-    Name VARCHAR (255) NOT NULL,
-    GPA DECIMAL(3,2)
+    name VARCHAR (255) NOT NULL,
+    gpa DECIMAL(3,2)
 );
 -- delete auto_crement from student_id
 --ALTER table student 
 --DROP PRIMARY KEY,
 --CHANGE student_id student_id INT(10) UNSIGNED PRIMARY KEY;
-CREATE Table `department`(
+CREATE TABLE `department`(
     dept_id char(8) PRIMARY KEY,
     name VARCHAR (255) NOT NULL unique,
     head VARCHAR (255) NOT NULL,
@@ -127,7 +127,7 @@ CREATE Table `department`(
 --CHANGE dept_id dept_id char(8) PRIMARY KEY;
 
 
-CREATE Table `course`(
+CREATE TABLE `course`(
     dept_id CHAR(8),
     course_id INT (10),
     name varchar(32) not null,
@@ -138,7 +138,7 @@ CREATE Table `course`(
     ON update CASCADE
     ON delete RESTRICT
 );
-CREATE Table enrolled (
+CREATE TABLE enrolled (
     dept_id CHAR (8),
     course_id INT (10),
     student_id INT (10) UNSIGNED,
@@ -167,27 +167,27 @@ INSERT INTO department VALUES ('SOC', "Sociology", 'Nana', 'west', 200);
 INSERT INTO department VALUES ('GEO', "Geology", 'Sofie', 'north', 100);
 
 --insert data into course table
-insert into course values ('CS',101,'Programming',4);
-insert into course values ('CS',201,'Algorithms',3);
-insert into course values ('CS',202,'Systems',3);
-insert into course values ('IE',101,'Proabability',3);
-insert into course values ('IE',102,'Statistics',3);
-insert into course values ('GEO',101,'Geo Morphology',3);
-insert into course values ('GEO',201,'Petrology',4);
-insert into course values ('GEO',301,'Tectonics',4);
-insert into course values ('LING',102,'Phonetics',3);
-insert into course values ('LING',104,'Syntax',4);
-insert into course values ('SOC',102,'Society',3);
+INSERT into course VALUES ('CS',101,'Programming',4);
+INSERT into course VALUES ('CS',201,'Algorithms',3);
+INSERT into course VALUES ('CS',202,'Systems',3);
+INSERT into course VALUES ('IE',101,'Proabability',3);
+INSERT into course VALUES ('IE',102,'Statistics',3);
+INSERT into course VALUES ('GEO',101,'Geo Morphology',3);
+INSERT into course VALUES ('GEO',201,'Petrology',4);
+INSERT into course VALUES ('GEO',301,'Tectonics',4);
+INSERT into course VALUES ('LING',102,'Phonetics',3);
+INSERT into course VALUES ('LING',104,'Syntax',4);
+INSERT into course VALUES ('SOC',102,'Society',3);
 
 --insert data into enrolled table
-insert into enrolled values ('CS',101,11);
-insert into enrolled values ('GEO',101,44);
-insert into enrolled values ('CS',101,33);
-insert into enrolled values ('CS',201,22);
-insert into enrolled values ('GEO',301,44);
-insert into enrolled values ('LING',102,22);
-insert into enrolled values ('LING',104,33);
-insert into enrolled values ('SOC',102,55);
+INSERT into enrolled VALUES ('CS',101,11);
+INSERT into enrolled VALUES ('GEO',101,44);
+INSERT into enrolled VALUES ('CS',101,33);
+INSERT into enrolled VALUES ('CS',201,22);
+INSERT into enrolled VALUES ('GEO',301,44);
+INSERT into enrolled VALUES ('LING',102,22);
+INSERT into enrolled VALUES ('LING',104,33);
+INSERT into enrolled VALUES ('SOC',102,55);
 
 -------------------Some queries to check data
 use registration;
@@ -195,7 +195,7 @@ SELECT * from department;
 -- What is the name of the head of the CS dept?
 SELECT head
 FROM department
-where dept_id = 'CS';
+WHERE dept_id = 'CS';
 -- What are the course numbers of all the CS courses?
 SELECT course_id
 FROM course
@@ -223,6 +223,6 @@ SELECT dept_id,
 head
 FROM department LEFT JOIN enrolled USING (dept_id)
 WHERE course_id is NULL;
-update department set name = 'SOCIO' where dept_id = 'SOC';
+UPDATE department SET name = 'SOCIO' WHERE dept_id = 'SOC';
 UPDATE department SET dept_id = 'SOCIO' WHERE dept_id = "SOC";
-update department set name = 'Sociology' where dept_id = 'SOCIO';
+UPDATE department SET name = 'Sociology' WHERE dept_id = 'SOCIO';
