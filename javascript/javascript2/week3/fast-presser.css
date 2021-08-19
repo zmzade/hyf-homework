@@ -1,0 +1,65 @@
+.s-l-boxes {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+}
+main {
+  margin: 100px;
+  padding: 100px;
+  background-color: whitesmoke;
+}
+#input-start-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body {
+  background-color: black;
+}
+h1 {
+  font-family: cursive;
+  display: flex;
+  justify-content: center;
+}
+#sDiv {
+  margin-right: 20px;
+  display: block;
+  text-align: center;
+  width: 300px;
+}
+#lDiv {
+  display: block;
+  text-align: center;
+  width: 300px;
+}
+#start {
+  background-color: seagreen;
+}
+#restart {
+  width: 200px;
+  background-color: goldenrod;
+}
+#start-button {
+  margin-top: 20px;
+}
+#restart-button {
+  display: flex;
+  justify-content: center;
+}
+#game-result {
+  display: block;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: x-large;
+  font-family: cursive;
+}
+#s-canvas {
+  width: 300px;
+}
+#l-canvas {
+  width: 300px;
+}
