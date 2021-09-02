@@ -81,11 +81,10 @@ router.get("/:id", async (request, response) => {
 router.put("/:id", async (request, response) => {
   try {
     // knex syntax for selecting things. Look up the documentation for knex for further info
-    const concertWithId = await knex("concerts")
-      .where({ id: 2 })
-      .update({ title: "Homer" });
-
-    response.json(concertWithId);
+    await knex("concerts")
+      .where({ id: request.params.id })
+      .update(request.body)
+      .then((data) => response.json("data changed"));
   } catch (error) {
     throw error;
   }
@@ -94,9 +93,10 @@ router.put("/:id", async (request, response) => {
 router.delete("/:id", async (request, response) => {
   try {
     // knex syntax for selecting things. Look up the documentation for knex for further info
-    const concertWithId = await knex("concerts").where({ id: 3 }).del();
-
-    response.json(concertWithId);
+    await knex("concerts")
+      .where({ id: request.params.id })
+      .del()
+      .then((data) => response.json("data was deleted"));
   } catch (error) {
     throw error;
   }
