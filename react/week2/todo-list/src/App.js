@@ -82,7 +82,7 @@ function App() {
 
   const addTodo = () => {
     let randValue = Math.floor(Math.random() * todoArr.length);
-    const newTodo = todoArr[randValue];
+    let newTodo = todoArr[randValue];
 
     //const newTodoArr = todoArr.concat(newTodo);
     const newTodoArr = [...todoArr, newTodo];
