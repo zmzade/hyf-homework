@@ -66,7 +66,7 @@ const TodoList = (props) => {
       {props.todorows.map((x, index) => {
         return (
           <TodoRow
-            key={index}
+            key={x.id}
             textDescription={x.description}
             id={x.id}
             handleDelete={props.handleDelete}
