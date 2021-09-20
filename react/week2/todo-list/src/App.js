@@ -81,13 +81,16 @@ function App() {
   const [todoArr, setTodoArr] = useState(todos);
 
   const addTodo = () => {
-    let randValue = Math.floor(Math.random() * todoArr.length);
-    let newTodo = todoArr[randValue];
-
-    //const newTodoArr = todoArr.concat(newTodo);
-    const newTodoArr = [...todoArr, newTodo];
-
-    setTodoArr(newTodoArr);
+    const lastItem = todoArr[todoArr.length - 1];
+    const nextId = lastItem === undefined ? 1 : lastItem.id + 1;
+    const newTodoItem = {
+      id: nextId,
+      description: "random text",
+    };
+    console.log(newTodoItem);
+    const newTodoItems = [...todoArr, newTodoItem];
+    console.log(newTodoItems);
+    setTodoArr(newTodoItems);
   };
 
   const handleDelete = (id) => {
