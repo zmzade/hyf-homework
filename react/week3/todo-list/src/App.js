@@ -4,6 +4,7 @@ import TodoList from "./TodoList";
 import Fetching from "./Fetching";
 import { getNextId } from "./Helper";
 import Timer from "./Timer";
+import PropTypes from "prop-types";
 
 function App() {
   const [todoText, setTodoText] = useState("");
@@ -71,5 +72,11 @@ function App() {
     </div>
   );
 }
-
+App.prototype = {
+  deadline: PropTypes.Date,
+  onChange: PropTypes.func,
+  todos: PropTypes.array,
+  id: PropTypes.number,
+  description: PropTypes.string,
+};
 export default App;

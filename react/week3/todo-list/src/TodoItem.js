@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const TodoItem = (props) => {
   const { todo } = props;
@@ -31,5 +32,10 @@ const TodoItem = (props) => {
       <button onClick={() => changeEditMode(!editMode)}>{buttonName}</button>
     </li>
   );
+};
+TodoItem.prototype = {
+  description: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
 };
 export default TodoItem;

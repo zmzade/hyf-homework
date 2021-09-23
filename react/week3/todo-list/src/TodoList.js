@@ -1,5 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import PropTypes from "prop-types";
 
 const RowsBorder = (props) => {
   const { children } = props;
@@ -20,5 +21,9 @@ const TodoList = (props) => {
       </ul>
     </div>
   );
+};
+
+TodoList.prototype = {
+  id: PropTypes.number,
 };
 export default TodoList;
