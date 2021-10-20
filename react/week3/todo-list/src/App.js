@@ -4,7 +4,6 @@ import TodoList from "./TodoList";
 import Fetching from "./Fetching";
 import { getNextId } from "./Helper";
 import Timer from "./Timer";
-import PropTypes from "prop-types";
 
 function App() {
   const [todoText, setTodoText] = useState("");
@@ -19,16 +18,16 @@ function App() {
 
   const addTodo = () => {
     if (!todoText) {
-      return alert("Insert new todo");
+      return alert("Todo title cannot be empty - please insert a new todo");
     }
     if (!deadline) {
-      return alert("insert deadline");
+      return alert("Todo needs a dealine-please insert deadline");
     }
     //the built-in toISOString method format date to the ISO 8601 format:
     const currentDay = new Date().toISOString().split("T")[0];
 
     if (deadline < currentDay) {
-      return alert("deadline is not possible");
+      return alert("this deadline is not possible-please edite it.");
     }
 
     const nextId = getNextId(todos);
@@ -72,11 +71,5 @@ function App() {
     </div>
   );
 }
-App.prototype = {
-  deadline: PropTypes.Date,
-  onChange: PropTypes.func,
-  todos: PropTypes.array,
-  id: PropTypes.number,
-  description: PropTypes.string,
-};
+
 export default App;
