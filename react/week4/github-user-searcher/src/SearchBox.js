@@ -12,7 +12,7 @@ const SearchBox = () => {
         placeholder="insert username"
         value={value.textValue}
         onChange={(e) => {
-          value.changeTextValue(e.target.value);
+          value.setTextValue(e.target.value);
         }}
       />
       <RenderUsers />
