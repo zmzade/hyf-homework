@@ -8,7 +8,7 @@ import Header from "./Header";
 function App() {
   const [githubUsers, setGithubUsers] = useState([]);
   const [isError, setIsError] = useState(false);
-  const [textValue, changeTextValue] = useState("");
+  const [textValue, setTextValue] = useState("");
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (!textValue) {
@@ -30,7 +30,7 @@ function App() {
     isError,
     textValue,
 
-    changeTextValue,
+    setTextValue,
     loading,
   };
   return (
